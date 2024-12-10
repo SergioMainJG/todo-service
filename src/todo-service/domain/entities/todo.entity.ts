@@ -1,16 +1,23 @@
+import { StatusOptions } from "../..";
+import { Formatter } from "../../../common/formatter";
 
-type StatusOptions = 'Undone' | 'Progress' | 'Done';
 export class TodoEntity {
     private static id: number = 0;
     private readonly id: number;
+
+    private _initDate: string;
+    private _finishDate: string;
+
     constructor(
         private _title: string,
-        private _initDate: Date,
-        private _finishDate: Date,
         private _description: string,
+        initDate: Date,
+        finishDate: Date,
         private _tags: string[],
         private _status: StatusOptions
-    ){
+    ) {
+        this._initDate = Formatter.FormatDate(initDate);
+        this._finishDate = Formatter.FormatDate(finishDate);
         this.id = ++TodoEntity.id;
     }
 
@@ -20,17 +27,17 @@ export class TodoEntity {
     set title(title: string) {
         this._title = title;
     }
-    get initDate(): Date {
+    get initDate(): string {
         return this._initDate;
     }
     set initDate(initDate: Date) {
-        this._initDate = initDate;
+        this._initDate = Formatter.FormatDate(initDate);
     }
-    get finishDate(): Date {
+    get finishDate(): string {
         return this._finishDate;
     }
     set finishDate(finishDate: Date) {
-        this._finishDate = finishDate;
+        this._finishDate = Formatter.FormatDate(finishDate);
     }
     get description(): string {
         return this._description;
