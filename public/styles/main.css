@@ -1,0 +1,277 @@
+:root {
+  --text: hsla(25, 87%, 6%, 1);
+  --alice-blue: hsla(205, 87%, 94%, 1);
+  --uranian-blue: hsla(207, 89%, 86%, 1);
+  --light-sky-blue: hsla(207, 90%, 77%, 1);
+  --argentinian-blue: hsla(207, 89%, 68%, 1);
+  --argentinian-blue-2: hsla(207, 90%, 61%, 1);
+  --dodger-blue: hsla(207, 90%, 54%, 1);
+  --bleu-de-france: hsla(208, 79%, 51%, 1);
+  --french-blue: hsla(210, 79%, 46%, 1);
+  --green-blue: hsla(212, 80%, 42%, 1);
+  --cobalt-blue: hsla(216, 85%, 34%, 1);
+}
+
+*{
+  box-sizing: border-box;
+}
+body{
+  background: var(--alice-blue);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.main-header{
+  text-align: center;
+  background: var(--cobalt-blue);
+  width: 100%;
+}
+.main-header > h1{
+  font-size: 3rem;
+  filter: drop-shadow(
+    0 0 10px var(--uranian-blue)
+  );
+  margin: 0;
+  padding: 0;
+}
+.main-header > h2{
+  font-size: 2rem;
+  filter: drop-shadow(
+    0 0 2.5px var(--uranian-blue)
+  );
+  margin: 0;
+  padding: 0;
+}
+.main-content{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto 30rem auto;
+  grid-template-rows:
+    minmax(1rem, 3rem)
+    minmax(20rem, 40rem)
+    minmax(1rem, 3rem);
+  grid-template-areas:
+  ". search ."
+  ". todos ."
+  ". nav .";
+}
+.search-bar-container{
+  width: 100%;
+  grid-area: search;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar-input{
+  margin: 0 2rem 0 2px;
+  width: 50%;
+  border: 2px solid var(--green-blue);
+  border-radius: 7px;
+  background: var(--light-sky-blue);
+  color: var(--text);
+}
+.search-bar-input::placeholder{
+  color: var(--text);
+}
+.filter-search{
+  margin: 0 2rem 0 0;
+  width: 6rem;
+  border: 2px solid var(--green-blue);
+  border-radius: 7px;
+  background: var(--light-sky-blue);
+  color: var(--text);
+}
+.todos-container{
+  width: 100%;
+  grid-area: todos;
+  display: flex;
+  flex-direction: column;
+  background: var(--dodger-blue);
+  border: 5px solid var(--cobalt-blue);
+  border-radius: 5px;
+}
+.todos-pages{
+  height: calc(100%/3);
+  width: 100%;
+  border: 3px solid var(--green-blue);
+}
+.todo-header{
+  text-align: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.todo-title,
+.todo-init-date,
+.todo-finish-date{
+  margin: 5px;
+  padding: 0;
+}
+.todo-content{
+  padding: 5px;
+}
+.todo-desc{
+  font-size: 0.9em;
+  overflow: hidden;
+  margin: 0;
+}
+.todo-characteristics{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tags-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.todo-tags-title{
+  font-size: 0.8rem;
+}
+.todo-tags-list{
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.todo-tag{
+  text-align: center;
+  font-size: inherit;
+  border: 1px solid hsl(140, 100%, 51%);
+  border-radius: 7px;
+  background-color: hsl(140, 100%, 29%);
+  padding: 5px;
+  width: min-content;
+  will-change: filter, font-size,width, background-color, border;
+  transition: filter 1s, font-size 1s,width 1, background-color 1s, border 1s;
+}
+.todo-tag:hover{
+  filter: drop-shadow(
+    0 0 5px black
+  );
+  font-size: 1.2rem;
+  width: 4rem;
+  background: hsl(320, 100%, 29%);
+  border: 1px solid hsl(320, 100%, 51%);
+}
+.todo-actions-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.update-progress-select,
+.button-delete,
+.button-modify,
+.button-view{
+  border: 1px solid black;
+  border-radius: 5px;
+  color: white;
+}
+.button-delete{
+  background: hsl(0, 80%, 48%);
+  filter: drop-shadow(
+    5px 5px 6px black
+  );
+}
+.button-delete:hover{
+  background: hsl(0, 75%, 27%);
+  filter: drop-shadow(
+    0px 0px 2px black
+  );
+}
+.button-modify{
+  background: hsl(215, 100%, 50%);
+  filter: drop-shadow(
+    5px 5px 6px black
+  );
+}
+.button-modify:hover{
+  background: hsl(215, 100%, 25%);
+  filter: drop-shadow(
+    0px 0px 2px black
+  );
+}
+.button-view{
+  background: hsl(96, 100%, 40%);
+  filter: drop-shadow(
+    5px 5px 6px black
+  );
+}
+.button-view:hover{
+  background: hsl(96, 100%, 26%);
+  filter: drop-shadow(
+    0px 0px 2px black
+  );
+}
+.update-progress-label{
+  font-size: 0.9rem;
+}
+.update-progress-select{
+  background: hsl(178, 100%, 50%);
+  color: black;
+}
+.done-option{
+  background: hsla(116, 100%, 50%, 0.496);
+  color: black;
+}
+.in-progress-option{
+  background: hsla(71, 100%, 50%, 0.893);
+  color: black;
+}
+.undone-option{
+  background: hsla(237, 55%, 25%, 0.793);
+  color: black;
+}
+.nav-todos-container{
+  width: 100%;
+  grid-area: nav;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem
+}
+.button-nav{
+  border: 1px solid black;
+  border-radius: 4px;
+  background: var(--bleu-de-france);
+  color: white;
+  padding: 5px;
+}
+.main-footer{
+  width: 100%;
+  background-color: var(--cobalt-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-footer >h3{
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+.github{
+  background: black;
+  color: white;
+  /* padding: 5px; */
+  border-radius: 7px;
+  font-size: 0.9rem;
+}
