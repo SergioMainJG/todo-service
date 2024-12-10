@@ -60,4 +60,16 @@ export class TodoEntity {
     get getId(): number {
         return this.id;
     }
+
+    fromStringToTodoEntity(todo: string): TodoEntity {
+        const todoEntity = JSON.parse(todo);
+        return new TodoEntity(
+            todoEntity._title,
+            todoEntity._description,
+            todoEntity._initDate,
+            todoEntity._finishDate,
+            todoEntity._tags,
+            todoEntity._status
+        );
+    }
 }
