@@ -1,7 +1,7 @@
 import { TodoEntity } from "../..";
 import { TodoCharacteristic } from '../../d/todo';
 
-export abstract class TodoInfrastructure{
+export abstract class TodoRepository{
     abstract createTodo(todo:TodoEntity):Promise<TodoEntity>
     abstract updateTodo(id:string):Promise<TodoEntity>
     abstract deleteTodo(id:string):Promise<TodoEntity>
