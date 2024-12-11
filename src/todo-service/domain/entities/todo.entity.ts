@@ -3,7 +3,7 @@ import { Formatter } from "../../../common/formatter";
 
 export class TodoEntity {
     private static id: number = 0;
-    private readonly id: number;
+    private readonly _id: number;
 
     private _initDate: string;
     private _finishDate: string;
@@ -18,7 +18,7 @@ export class TodoEntity {
     ) {
         this._initDate = Formatter.FormatDate(initDate);
         this._finishDate = Formatter.FormatDate(finishDate);
-        this.id = ++TodoEntity.id;
+        this._id = ++TodoEntity.id;
     }
 
     get title(): string {
@@ -57,8 +57,8 @@ export class TodoEntity {
     set status(status: StatusOptions) {
         this._status = status;
     }
-    get getId(): number {
-        return this.id;
+    get id(): number {
+        return this._id;
     }
 
     static fromStringToTodoEntity(todo: string): TodoEntity {

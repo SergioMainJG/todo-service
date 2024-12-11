@@ -21,7 +21,8 @@ export class TodoBuilder {
         this.status = 'Undone';
     }
     setTitle(title: string) {
-        this.title = title;
+        // console.log( title.replace(/\s/g, '-') )
+        this.title = title.replace(/\s/g, '-');
         return this;
     }
     setInitDate(initDate: Date) {
