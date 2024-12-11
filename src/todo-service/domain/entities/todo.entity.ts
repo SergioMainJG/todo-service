@@ -61,7 +61,7 @@ export class TodoEntity {
         return this.id;
     }
 
-    fromStringToTodoEntity(todo: string): TodoEntity {
+    static fromStringToTodoEntity(todo: string): TodoEntity {
         const todoEntity = JSON.parse(todo);
         return new TodoEntity(
             todoEntity._title,
