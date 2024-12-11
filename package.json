@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "vite --port 3000",
+    "build": "tsc && vite build --minify esbuild",
+    "optimize": "vite optimize",
     "preview": "vite preview"
   },
   "devDependencies": {

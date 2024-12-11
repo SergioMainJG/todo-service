@@ -6,5 +6,5 @@ export abstract class TodoDatasource{
     abstract updateTodo(id:number,  todo: TodoEntity):Promise<boolean>
     abstract deleteTodo(id:number):Promise<boolean>
     abstract getAllTodos(): Promise<TodoEntity[]>
-    abstract getStrategy( characteristic: TodoCharacteristic ):Promise<TodoEntity>
+    abstract getTodosByProp( characteristic: TodoCharacteristic, prop: string ):Promise<TodoEntity[]>
 }

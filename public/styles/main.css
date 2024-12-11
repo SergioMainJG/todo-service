@@ -89,6 +89,21 @@ body{
   background: var(--light-sky-blue);
   color: var(--text);
 }
+.add-todo{
+  border: 1px solid black;
+  border-radius: 5px;
+  color: white;
+  background: var(--argentinian-blue-2);
+  filter: drop-shadow(
+    5px 5px 10px black
+  );
+}
+.add-todo:hover{
+  filter: drop-shadow(
+    0 0 5px black
+  );
+  background: var(--french-blue);
+}
 .todos-container{
   width: 100%;
   grid-area: todos;
@@ -251,6 +266,15 @@ body{
   background: var(--bleu-de-france);
   color: white;
   padding: 5px;
+  filter: drop-shadow(
+    5px 5px 6px black
+  );
+}
+.button-nav:hover{
+  background: var(--green-blue);
+  filter: drop-shadow(
+    0 0 2px black
+  );
 }
 .main-footer{
   width: 100%;

@@ -17,6 +17,6 @@ export class TodoRepositoryImpl implements TodoRepository {
         return this.todoDatasource.getAllTodos();
     }
     async getStrategy(characteristic: TodoCharacteristic): Promise<TodoEntity> {
-        return this.todoDatasource.getStrategy(characteristic);
+        return this.todoDatasource.getTodosByProp(characteristic);
     }
 }
