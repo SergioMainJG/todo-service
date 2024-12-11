@@ -299,3 +299,7 @@ a{
   border-radius: 7px;
   font-size: 0.9rem;
 }
+.hidden {
+  visibility: hidden;
+  pointer-events: none;
+}

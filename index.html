@@ -44,8 +44,8 @@
           Add Todo
         </button>
       </article>
-      <section class="todos-container">
-        <section class="todos-pages">
+      <section class="todos-container" id="todos-container">
+        <!-- <section class="todos-pages">
           <header class="todo-header">
             <h4>ID: 1</h4>
             <h3 class="todo-title">Todo Title</h3>
@@ -162,70 +162,11 @@
               </select>
             </section>
           </footer>
-        </section>
-        <section class="todos-pages">
-          <header class="todo-header">
-            <h4>ID: 1</h4>
-            <h3 class="todo-title">Todo Title</h3>
-            <h4 class="todo-init-date">Since: 2024</h4>
-            <h4 class="todo-finish-date">To: 2026</h4>
-          </header>
-          <main class="todo-content">
-            <p class="todo-desc">
-              Nisi enim tempor nostrud aliquip consectetur ipsum sit cupidatat
-              occaecat laboris in qui ea deserunt.
-            </p>
-          </main>
-          <footer class="todo-characteristics">
-            <section class="tags-container">
-              <h5 class="todo-tags-title">Tags:</h5>
-              <ul class="todo-tags-list">
-                <li class="todo-tag">abc</li>
-                <li class="todo-tag">cde</li>
-                <li class="todo-tag">fgh</li>
-                <li class="todo-tag">ijk</li>
-              </ul>
-            </section>
-            <section class="todo-actions-container">
-              <button type="button" id="delete" class="button-delete">
-                Delete
-              </button>
-              <button type="button" id="modify" class="button-modify">
-                Modify
-              </button>
-              <button type="button" id="view" class="button-view">
-                View Better
-              </button>
-              <label
-                class="update-progress-label"
-                id="update-progress-label"
-                for="update-progress"
-                >Set Progress:</label
-              >
-              <select
-                class="update-progress-select"
-                aria-labelledby="update-progress-label"
-                aria-label="update-progress"
-                name="update-progress"
-                id="update-progress"
-              >
-                <option class="done-option" value="done">
-                  Done
-                </option>
-                <option class="in-progress-option" value="progress">
-                  In Progress
-                </option>
-                <option class="undone-option" value="undone" selected>
-                  Undone
-                </option>
-              </select>
-            </section>
-          </footer>
-        </section>
+        </section> -->
       </section>
       <section class="nav-todos-container">
-        <button type="button" id="prev" class="button-nav">Prev</button>
-        <p>1</p>
+        <button type="button" id="prev" disabled class="button-nav">Prev</button>
+        <p id="actual-page">1</p>
         <button type="button" id="next" class="button-nav">Next</button>
       </section>
     </main>
